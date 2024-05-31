@@ -2,13 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 
+/// A custom dialog for picking a single month.
 class CustomMonthPickerDialog {
+  /// The build context of the parent widget.
   final BuildContext context;
+
+  /// The primary color used for text and icons.
   final Color primaryColor;
+
+  /// The secondary color used for backgrounds.
   final Color secondaryColor;
+
+  /// The initially selected date when the dialog is first displayed.
   final DateTime initialDate;
+
+  /// The callback function to be executed when the user confirms their selection.
   final Function(DateTime) onConfirm;
 
+  /// Creates a [CustomMonthPickerDialog] with the provided [context], [primaryColor], [secondaryColor], [initialDate], and [onConfirm] callback.
   CustomMonthPickerDialog({
     required this.context,
     required this.primaryColor,
@@ -17,9 +28,13 @@ class CustomMonthPickerDialog {
     required this.onConfirm,
   });
 
+  /// The year currently being displayed in the picker.
   int _pickerYear = DateTime.now().year;
+
+  /// The temporary selected month during the dialog interaction.
   late DateTime _temporarySelectedMonth;
 
+  /// Displays the month picker dialog.
   void show() {
     _temporarySelectedMonth = initialDate;
 
@@ -109,6 +124,7 @@ class CustomMonthPickerDialog {
     );
   }
 
+  /// Generates a row of month buttons from [from] to [to].
   List<Widget> _generateRowOfMonths(
       int from, int to, StateSetter dialogSetState) {
     List<Widget> months = [];
@@ -155,6 +171,7 @@ class CustomMonthPickerDialog {
     return months;
   }
 
+  /// Generates rows of months for the picker dialog.
   List<Widget> _generateMonths(StateSetter dialogSetState) {
     return [
       Row(
@@ -168,6 +185,7 @@ class CustomMonthPickerDialog {
     ];
   }
 
+  /// Generates the navigation row for changing the year.
   Widget _navigationRow(StateSetter setState) {
     return Row(
       children: [

@@ -2,14 +2,27 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:calendar_date_picker2/calendar_date_picker2.dart';
 
+/// A custom dialog for picking a week range.
 class CustomWeekPickerDialog {
+  /// The build context of the parent widget.
   final BuildContext context;
+
+  /// The primary color used for text and icons.
   final Color primaryColor;
+
+  /// The secondary color used for backgrounds.
   final Color secondaryColor;
+
+  /// The start date of the initial selected range.
   final DateTime startDate;
+
+  /// The end date of the initial selected range.
   final DateTime endDate;
+
+  /// The callback function to be executed when the user confirms their selection.
   final Function(DateTime, DateTime) onConfirm;
 
+  /// Creates a [CustomWeekPickerDialog] with the provided [context], [primaryColor], [secondaryColor], [startDate], [endDate], and [onConfirm] callback.
   CustomWeekPickerDialog({
     required this.context,
     required this.primaryColor,
@@ -19,8 +32,10 @@ class CustomWeekPickerDialog {
     required this.onConfirm,
   });
 
+  /// The temporary selected date range during the dialog interaction.
   late List<DateTime?> _dateRangePickerValue;
 
+  /// Displays the week picker dialog.
   void show() {
     _dateRangePickerValue = [startDate, endDate];
 

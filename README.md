@@ -140,14 +140,16 @@ onPressed: () async {
 
 ### `day_picker.dart`
 
-- **`daySelected`**  
+- **`daySelected`**
+
   Stores the currently selected date.
 
   **Type:** `DateTime`
 
   **Default:** `DateTime.now()`
 
-- **`dayFormatted`**  
+- **`dayFormatted`**
+
   Stores the currently selected date formatted as 'yyyy/MM/dd'.
 
   **Type:** `String`

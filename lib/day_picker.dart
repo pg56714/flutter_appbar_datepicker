@@ -2,13 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:calendar_date_picker2/calendar_date_picker2.dart';
 
+/// A custom dialog for picking a single day.
 class CustomDayPickerDialog {
+  /// The build context of the parent widget.
   final BuildContext context;
+
+  /// The primary color used for text and icons.
   final Color primaryColor;
+
+  /// The secondary color used for backgrounds.
   final Color secondaryColor;
+
+  /// The initially selected date when the dialog is first displayed.
   final DateTime initialDate;
+
+  /// The callback function to be executed when the user confirms their selection.
   final Function(DateTime) onConfirm;
 
+  /// Creates a [CustomDayPickerDialog] with the provided [context], [primaryColor], [secondaryColor], [initialDate], and [onConfirm] callback.
   CustomDayPickerDialog({
     required this.context,
     required this.primaryColor,
@@ -17,8 +28,10 @@ class CustomDayPickerDialog {
     required this.onConfirm,
   });
 
+  /// The temporary selected date during the dialog interaction.
   late DateTime _temporarySelectedDate;
 
+  /// Displays the day picker dialog.
   void show() {
     _temporarySelectedDate = initialDate;
 
