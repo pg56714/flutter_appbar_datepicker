@@ -4,7 +4,8 @@ A new Flutter package includes a day picker, week picker, and month picker.
 
 <!-- ![main](/assets/main.png) -->
 
-<img src="./assets/main.png" width=50% />
+<!-- <img src="./assets/main.png" width=50% /> -->
+<img src="https://github.com/pg56714/flutter_appbar_datepicker/blob/main/assets/main.png?raw=true" width=50% />
 
 ## Getting started
 
@@ -14,7 +15,10 @@ Include short and useful examples for package users. For longer examples, please
 
 <!-- ![main](/assets/day.png) -->
 
-<img src="./assets/day.png" width=50% />
+<!-- <img src="./assets/day.png" width=50% /> -->
+<img src="https://github.com/pg56714/flutter_appbar_datepicker/blob/main/assets/day.png?raw=true" width=50% />
+
+day_picker.dart
 
 ```dart
 DateTime daySelected = DateTime.now();
@@ -48,7 +52,10 @@ onPressed: () async {
 
 <!-- ![main](/assets/week.png) -->
 
-<img src="./assets/week.png" width=50% />
+<!-- <img src="./assets/week.png" width=50% /> -->
+<img src="https://github.com/pg56714/flutter_appbar_datepicker/blob/main/assets/week.png?raw=true" width=50% />
+
+week_picker.dart
 
 ```dart
 List<DateTime?> _dateRangePickerValue = [
@@ -97,7 +104,10 @@ IconButton(
 
 <!-- ![main](/assets/month.png) -->
 
-<img src="./assets/month.png" width=50% />
+<!-- <img src="./assets/month.png" width=50% /> -->
+<img src="https://github.com/pg56714/flutter_appbar_datepicker/blob/main/assets/month.png?raw=true" width=50% />
+
+month_picker.dart
 
 ```dart
 DateTime monthSelected = DateTime.now();
@@ -125,3 +135,57 @@ onPressed: () async {
   ).show();
 },
 ```
+
+## Dentails
+
+### `day_picker.dart`
+
+- **`daySelected`**  
+  Stores the currently selected date.
+
+  **Type:** `DateTime`
+
+  **Default:** `DateTime.now()`
+
+- **`dayFormatted`**  
+  Stores the currently selected date formatted as 'yyyy/MM/dd'.
+
+  **Type:** `String`
+
+  **Default:** `DateFormat('yyyy/MM/dd').format(DateTime.now())`
+
+### `week_picker.dart`
+
+- **`_dateRangePickerValue`**
+
+  Stores an array of two `DateTime` objects representing the start and end of a date range.
+
+  **Type:** `List<DateTime?>`
+
+  **Default:** `[DateTime.now(), DateTime.now().add(const Duration(days: 6))]`
+
+- **`formatDate`**
+
+  Formats the date range from the `_dateRangePickerValue` list into a string showing the start and end dates.
+
+  **Type:** `String Function(List<DateTime?> dateRange)`
+
+  **Returns:** A string formatted as 'yyyy/MM/dd - yyyy/MM/dd' representing the start and end dates.
+
+### `month_picker.dart`
+
+- **`monthSelected`**
+
+  Stores the currently selected date.
+
+  **Type:** `DateTime`
+
+  **Default:** `DateTime.now()`
+
+- **`monthFormatted`**
+
+  Stores the currently selected date formatted as 'yyyy/MM'.
+
+  **Type:** `String`
+
+  **Default:** `DateFormat('yyyy/MM').format(DateTime.now())`

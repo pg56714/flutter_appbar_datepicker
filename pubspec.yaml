@@ -1,6 +1,6 @@
 name: flutter_appbar_datepicker
 description: "A new Flutter package includes a day picker, week picker, and month picker."
-version: 0.0.1
+version: 0.0.2
 homepage:
 repository: https://github.com/pg56714/flutter_appbar_datepicker
 
@@ -12,8 +12,8 @@ dependencies:
   calendar_date_picker2: ^1.0.2
   flutter:
     sdk: flutter
-  flutter_screenutil: ^5.9.2
-  intl: ^0.18.0
+  flutter_screenutil: ^5.9.3
+  intl: ^0.19.0
 
 dev_dependencies:
   flutter_test:
